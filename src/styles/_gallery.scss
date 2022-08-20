@@ -1,14 +1,46 @@
 .gallery {
   margin: 2rem 0;
   padding: 0 1rem;
-
   .gallery-imgs {
     display: grid;
+    margin: 2rem 0;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
     img {
       width: 15rem;
       height: 10rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .gallery {
+    .gallery-imgs {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 1045px) {
+  .gallery {
+    .gallery-imgs {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .gallery {
+    .gallery-imgs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .gallery {
+    .gallery-imgs {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
