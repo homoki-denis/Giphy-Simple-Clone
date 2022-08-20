@@ -52,6 +52,8 @@ function Gallery() {
 
   return (
     <div className="gallery">
+      <h1>Giphy Simple Clone</h1>
+
       <form>
         <input type="text" value={search} onChange={handleSearch} />
         <button onClick={handleSubmit}>Search</button>

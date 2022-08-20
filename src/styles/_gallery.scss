@@ -1,6 +1,9 @@
 .gallery {
   margin: 2rem 0;
   padding: 0 1rem;
+  h1 {
+    margin: 2rem 0;
+  }
   form {
     input {
       background-color: #fff;
@@ -21,9 +24,11 @@
     margin: 2rem 0;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
+
     img {
       width: 15rem;
       height: 10rem;
+      align-self: center;
     }
   }
 }
