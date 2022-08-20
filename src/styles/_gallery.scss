@@ -1,6 +1,21 @@
 .gallery {
   margin: 2rem 0;
   padding: 0 1rem;
+  form {
+    input {
+      background-color: #fff;
+      color: black;
+      padding: 0.5rem 0.7rem;
+      font-size: 1.2rem;
+      border: none;
+    }
+    button {
+      border: none;
+      background-color: purple;
+      padding: 0.5rem 0.7rem;
+      font-size: 1.2rem;
+    }
+  }
   .gallery-imgs {
     display: grid;
     margin: 2rem 0;
