@@ -3,7 +3,10 @@ import React from "react";
 function SearchBar() {
   return (
     <div>
-      <h1>This is a SearchBar</h1>
+      <form>
+        <input type="text" />
+        <button>Search</button>
+      </form>
     </div>
   );
 }
