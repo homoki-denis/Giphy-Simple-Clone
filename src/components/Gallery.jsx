@@ -15,7 +15,7 @@ function Gallery() {
       const result = await axios("https://api.giphy.com/v1/gifs/trending", {
         params: {
           api_key: "KFh9BqStDxyQwQ5ycyZ5xbFhLkh7iCl6",
-          limit: 20,
+          limit: 50,
         },
       });
 
@@ -25,11 +25,15 @@ function Gallery() {
     fetchData();
   }, []);
 
-  //   console.log(gallery);
+  console.log(gallery);
 
   return (
-    <div>
-      <h1>This is the Gallery</h1>
+    <div className="gallery">
+      <div className="gallery-imgs">
+        {gallery.map((imgs, index) => (
+          <img src={imgs.images.fixed_height.url} key={index} />
+        ))}
+      </div>
     </div>
   );
 }
