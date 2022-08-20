@@ -19,7 +19,7 @@ function Gallery() {
       const result = await axios("https://api.giphy.com/v1/gifs/trending", {
         params: {
           api_key: "KFh9BqStDxyQwQ5ycyZ5xbFhLkh7iCl6",
-          limit: 10,
+          limit: 30,
         },
       });
 
