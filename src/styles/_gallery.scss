@@ -4,6 +4,15 @@
   h1 {
     margin: 2rem 0;
   }
+  h2 {
+    text-align: left;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    i {
+      color: #00ccff;
+      padding-right: 0.3rem;
+    }
+  }
   form {
     input {
       background-color: #fff;
@@ -14,9 +23,21 @@
     }
     button {
       border: none;
-      background-color: purple;
+      background: linear-gradient(
+        45deg,
+        rgb(153, 51, 255) 0%,
+        rgb(255, 102, 102) 100%
+      );
       padding: 0.5rem 0.7rem;
       font-size: 1.2rem;
+      i {
+        background: linear-gradient(
+          45deg,
+          rgb(153, 51, 255) 0%,
+          rgb(255, 102, 102) 100%
+        );
+      }
+      cursor: pointer;
     }
   }
   .gallery-imgs {
@@ -60,7 +81,29 @@
 @media screen and (max-width: 540px) {
   .gallery {
     .gallery-imgs {
-      grid-template-columns: repeat(1, 1fr);
+      grid: none;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .gallery {
+    h1 {
+      font-size: 1.5rem;
+    }
+    form {
+      input {
+        padding: 0.3rem;
+        width: 10rem;
+      }
+      button {
+        padding: 0.3rem 0.5rem;
+
+        i {
+        }
+      }
     }
   }
 }

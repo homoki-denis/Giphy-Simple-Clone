@@ -55,9 +55,19 @@ function Gallery() {
       <h1>Giphy Simple Clone</h1>
 
       <form>
-        <input type="text" value={search} onChange={handleSearch} />
-        <button onClick={handleSubmit}>Search</button>
+        <input
+          type="text"
+          value={search}
+          onChange={handleSearch}
+          placeholder="Search GIFs"
+        />
+        <button onClick={handleSubmit}>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </form>
+      <h2>
+        <i class="fa-solid fa-arrow-trend-up"></i> Trending
+      </h2>
       <div className="gallery-imgs">
         {gallery.map((imgs, index) => (
           <img src={imgs.images.fixed_height.url} key={index} />
