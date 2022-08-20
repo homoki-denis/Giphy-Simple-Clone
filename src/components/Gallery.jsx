@@ -27,7 +27,7 @@ function Gallery() {
     fetchData();
   }, []);
 
-  //   console.log(gallery);
+  console.log(gallery);
 
   // Functions
 
@@ -62,15 +62,25 @@ function Gallery() {
           placeholder="Search GIFs"
         />
         <button onClick={handleSubmit}>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
       <h2>
-        <i class="fa-solid fa-arrow-trend-up"></i> Trending
+        <i className="fa-solid fa-arrow-trend-up"></i> Trending
       </h2>
       <div className="gallery-imgs">
         {gallery.map((imgs, index) => (
-          <img src={imgs.images.fixed_height.url} key={index} />
+          <div>
+            <img src={imgs.images.fixed_height.url} key={index} />
+            <div className="gallery-imgs-subtitle">
+              <span>{imgs.title.split(" ").slice(0, 3).join(" ")}</span>
+              <span>
+                <a href={imgs.url} target="_blank">
+                  Download
+                </a>
+              </span>
+            </div>
+          </div>
         ))}
       </div>
     </div>

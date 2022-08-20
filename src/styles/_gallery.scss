@@ -44,12 +44,28 @@
     display: grid;
     margin: 2rem 0;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 0.8rem;
+
+    div {
+      width: 16rem;
+    }
 
     img {
-      width: 15rem;
+      width: 100%;
       height: 10rem;
       align-self: center;
+    }
+    .gallery-imgs-subtitle {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      span {
+        color: #a6a6a6;
+        a {
+          color: #a6a6a6;
+        }
+      }
     }
   }
 }
