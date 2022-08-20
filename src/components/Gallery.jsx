@@ -10,6 +10,8 @@ function Gallery() {
   // States
   const [gallery, setGallery] = useState([]);
   const [search, setSearch] = useState("");
+  const [gifs, setGifs] = useState([]);
+  const [links, setLinks] = useState("");
 
   // Effects
   useEffect(() => {
@@ -17,7 +19,7 @@ function Gallery() {
       const result = await axios("https://api.giphy.com/v1/gifs/trending", {
         params: {
           api_key: "KFh9BqStDxyQwQ5ycyZ5xbFhLkh7iCl6",
-          limit: 50,
+          limit: 10,
         },
       });
 
@@ -27,7 +29,11 @@ function Gallery() {
     fetchData();
   }, []);
 
-  console.log(gallery);
+  useEffect(() => {
+    localStorage.setItem("Gifs", JSON.stringify(gifs));
+  }, [gifs]);
+
+  // console.log(gallery);
 
   // Functions
 
@@ -48,6 +54,17 @@ function Gallery() {
     });
 
     setGallery(result.data.data);
+  };
+
+  const handleLinks = (e) => {
+    setLinks(e.target.value);
+  };
+
+  // console.log(links);
+
+  const saveLinks = (e) => {
+    e.preventDefault();
+    setGifs(links);
   };
 
   return (
@@ -82,6 +99,12 @@ function Gallery() {
             </div>
           </div>
         ))}
+      </div>
+      <div>
+        <form>
+          <input type="text" value={links} onChange={handleLinks} />
+          <button onClick={saveLinks}>Save To Local Storage</button>
+        </form>
       </div>
     </div>
   );
