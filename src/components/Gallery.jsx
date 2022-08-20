@@ -65,6 +65,7 @@ function Gallery() {
   const saveLinks = (e) => {
     e.preventDefault();
     setGifs(links);
+    setLinks("");
   };
 
   return (
@@ -103,7 +104,9 @@ function Gallery() {
       <div>
         <form>
           <input type="text" value={links} onChange={handleLinks} />
-          <button onClick={saveLinks}>Save To Local Storage</button>
+          <button onClick={saveLinks} className="btn-save">
+            Save To Local Storage
+          </button>
         </form>
       </div>
     </div>
