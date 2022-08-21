@@ -8,10 +8,11 @@ import { useState, useEffect } from "react";
 
 function Gallery() {
   // States
+  // const [gifs, setGifs] = useState([]);
+  // const [links, setLinks] = useState("");
+
   const [gallery, setGallery] = useState([]);
   const [search, setSearch] = useState("");
-  const [gifs, setGifs] = useState([]);
-  const [links, setLinks] = useState("");
   const [active, setActive] = useState([]);
 
   // Effects
@@ -30,9 +31,9 @@ function Gallery() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("Gifs", JSON.stringify(gifs));
-  }, [gifs]);
+  // useEffect(() => {
+  //   localStorage.setItem("Gifs", JSON.stringify(gifs));
+  // }, [gifs]);
 
   // console.log(gallery);
 
@@ -57,17 +58,17 @@ function Gallery() {
     setGallery(result.data.data);
   };
 
-  const handleLinks = (e) => {
-    setLinks(e.target.value);
-  };
+  // const handleLinks = (e) => {
+  //   setLinks(e.target.value);
+  // };
 
   // console.log(links);
 
-  const saveLinks = (e) => {
-    e.preventDefault();
-    setGifs(links);
-    setLinks("");
-  };
+  // const saveLinks = (e) => {
+  //   e.preventDefault();
+  //   setGifs(links);
+  //   setLinks("");
+  // };
 
   const activeHandler = (url) => {
     if (active.includes(url)) {
@@ -75,6 +76,8 @@ function Gallery() {
     } else {
       setActive((prevActive) => [...prevActive, url]);
     }
+
+    localStorage.setItem("Gifs", JSON.stringify(active));
   };
 
   console.log(active);
@@ -114,19 +117,6 @@ function Gallery() {
             </div>
           </div>
         ))}
-      </div>
-      <div>
-        <form>
-          <input
-            type="text"
-            value={links}
-            onChange={handleLinks}
-            placeholder="URL"
-          />
-          <button onClick={saveLinks} className="btn-save">
-            Save
-          </button>
-        </form>
       </div>
     </div>
   );
