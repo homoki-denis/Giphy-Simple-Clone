@@ -20,6 +20,7 @@
       padding: 0.5rem 0.7rem;
       font-size: 1.2rem;
       border: none;
+      outline: none;
     }
     .btn-save {
       margin: 1rem 0 0 0;
@@ -128,12 +129,4 @@
       }
     }
   }
-}
-
-.active {
-  color: #d651a3;
-}
-
-.inactive {
-  color: #fff;
 }

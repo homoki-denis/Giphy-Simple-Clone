@@ -97,9 +97,11 @@ function Gallery() {
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
+
       <h2>
         <i className="fa-solid fa-arrow-trend-up"></i> Trending
       </h2>
+
       <div className="gallery-imgs">
         {gallery.map((img, index) => (
           <div>
