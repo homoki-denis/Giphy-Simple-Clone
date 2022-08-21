@@ -12,6 +12,7 @@ function Gallery() {
   const [search, setSearch] = useState("");
   const [gifs, setGifs] = useState([]);
   const [links, setLinks] = useState("");
+  const [active, setActive] = useState([]);
 
   // Effects
   useEffect(() => {
@@ -68,6 +69,16 @@ function Gallery() {
     setLinks("");
   };
 
+  const activeHandler = (url) => {
+    if (active.includes(url)) {
+      setActive(active.filter((prevActive) => prevActive !== url));
+    } else {
+      setActive((prevActive) => [...prevActive, url]);
+    }
+  };
+
+  console.log(active);
+
   return (
     <div className="gallery">
       <h1>Giphy Simple Clone</h1>
@@ -87,15 +98,18 @@ function Gallery() {
         <i className="fa-solid fa-arrow-trend-up"></i> Trending
       </h2>
       <div className="gallery-imgs">
-        {gallery.map((imgs, index) => (
+        {gallery.map((img, index) => (
           <div>
-            <img src={imgs.images.fixed_height.url} key={index} />
+            <img src={img.images.fixed_height.url} key={index} />
             <div className="gallery-imgs-subtitle">
-              <span>{imgs.title.split(" ").slice(0, 3).join(" ")}</span>
+              <span>{img.title.split(" ").slice(0, 3).join(" ")}</span>
               <span>
-                <a href={imgs.url} target="_blank">
-                  Download
-                </a>
+                <i
+                  onClick={() => activeHandler(img.url)}
+                  className={`fa-solid fa-thumbs-up fa-lg ${
+                    active.includes(img.url) ? "active" : "inactive"
+                  }`}
+                ></i>
               </span>
             </div>
           </div>
@@ -103,9 +117,14 @@ function Gallery() {
       </div>
       <div>
         <form>
-          <input type="text" value={links} onChange={handleLinks} />
+          <input
+            type="text"
+            value={links}
+            onChange={handleLinks}
+            placeholder="URL"
+          />
           <button onClick={saveLinks} className="btn-save">
-            Save To Local Storage
+            Save
           </button>
         </form>
       </div>

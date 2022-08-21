@@ -63,10 +63,12 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
+
       span {
         color: #a6a6a6;
-        a {
-          color: #a6a6a6;
+
+        i {
+          cursor: pointer;
         }
       }
     }
@@ -126,4 +128,12 @@
       }
     }
   }
+}
+
+.active {
+  color: #d651a3;
+}
+
+.inactive {
+  color: #fff;
 }
