@@ -31,9 +31,9 @@ function Gallery() {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("Gifs", JSON.stringify(gifs));
-  // }, [gifs]);
+  useEffect(() => {
+    localStorage.setItem("Gifs", JSON.stringify(active));
+  }, [active]);
 
   // console.log(gallery);
 
@@ -77,10 +77,10 @@ function Gallery() {
       setActive((prevActive) => [...prevActive, url]);
     }
 
-    localStorage.setItem("Gifs", JSON.stringify(active));
+    // localStorage.setItem("Gifs", JSON.stringify(active));
   };
 
-  console.log(active);
+  // console.log(active);
 
   return (
     <div className="gallery">
